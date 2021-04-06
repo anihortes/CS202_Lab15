@@ -14,7 +14,7 @@ public:
     Wrapper(Typename type);
     void print(std::ostream &os) const;
     void setType(const Typename &t);
-    Typename getType();
+    Typename getType() const;
     template<typename S>
     friend std::ostream &operator<<(std::ostream &os, const Wrapper<S> &t);
 private:
@@ -29,7 +29,7 @@ void Wrapper<Typename>::setType(const Typename &t) {
 }
 
 template<typename Typename>
-Typename Wrapper<Typename>::getType(){
+Typename Wrapper<Typename>::getType() const{
     return _type;
 }
 
